@@ -30,9 +30,15 @@ export default {
             type: "pie",
             radius: ["50%", "70%"],
             data: [
-              { value: 400, name: "中性" },
-              { value: 335, name: "正面" },
-              { value: 310, name: "负面" }
+              { value: 400, name: "中性",itemStyle:{
+                  color:'#00b3ff'
+              }},
+              { value: 335, name: "正面",itemStyle:{
+                  color:'#01e44c'
+              } },
+              { value: 310, name: "负面",itemStyle:{
+                  color:'#fcdc02'
+              } }
             ],
             itemStyle: {
               emphasis: {
@@ -43,7 +49,8 @@ export default {
             },
             label: {
               normal: {
-                color: "#333"
+                color: "#333",
+                formatter:'{b}\n{c}条\n{d}%'
                 // formatter: '{b}:{c}/{d}%'
               }
             }

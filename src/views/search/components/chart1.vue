@@ -30,14 +30,43 @@ export default {
         },
         xAxis: {
           type: "category",
-          data: ["昆明市", "五华区", "盘龙区", "嵩明县", "禄劝县"]
+          data: ["金碧", "彩龙", "滇族", "大观网", "昆明"]
         },
         yAxis: {
           type: "value"
         },
         series: [
           {
-            data: [120, 200, 150, 80, 70,],
+            data: [{
+              value : 9876,
+              itemStyle:{
+                color: '#fc0404',
+              }
+            }, {
+              value : 7896,
+              //自定义特殊 itemStyle，仅对该数据项有效
+              itemStyle:{
+                color: '#f9d101',
+              }
+            },{
+              value : 5834,
+              //自定义特殊 itemStyle，仅对该数据项有效
+              itemStyle:{
+                color: '#298af7',
+              }
+            },{
+              value : 4135,
+              //自定义特殊 itemStyle，仅对该数据项有效
+              itemStyle:{
+                color: '#71cf7d',
+              }
+            },{
+              value : 3476,
+              //自定义特殊 itemStyle，仅对该数据项有效
+              itemStyle:{
+                color: '#dce404',
+              }
+            }],
             type: "bar"
           }
         ]

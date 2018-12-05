@@ -231,7 +231,7 @@
                       <Col span="12">
                         <Card>
                           <p slot="title">活跃媒体</p>
-                          <div style="padding:0 20px;">
+                          <div style="padding:0;">
                             <chart1></chart1>
                           </div>
                         </Card>
@@ -239,7 +239,7 @@
                       <Col span="12">
                         <Card>
                           <p slot="title">媒体分布</p>
-                          <div style="padding:0 20px;">
+                          <div style="padding:0;">
                             <chart2></chart2>
                           </div>
                         </Card>
@@ -247,7 +247,7 @@
                       <Col span="12" style="marginTop:10px;">
                         <Card>
                           <p slot="title">情感属性</p>
-                          <div style="padding:0 20px;">
+                          <div style="padding:0;">
                             <chart3></chart3>
                           </div>
                         </Card>
@@ -255,7 +255,7 @@
                       <Col span="12" style="marginTop:10px;">
                         <Card>
                           <p slot="title">发布热区</p>
-                          <div style="padding:0 20px;">
+                          <div style="padding:0;">
                             <chart4></chart4>
                           </div>
                         </Card>

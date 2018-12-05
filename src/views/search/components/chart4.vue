@@ -32,10 +32,41 @@ export default {
             yAxis: {
                 type: 'value'
             },
-            series: [{
-                data: [120, 200, 150, 80, 70],
-                type: 'bar'
-            }]
+            series: [
+              {
+                data: [{
+                  value : 120,
+                  itemStyle:{
+                    color: '#c370f3',
+                  }
+                }, {
+                  value : 200,
+                  //自定义特殊 itemStyle，仅对该数据项有效
+                  itemStyle:{
+                    color: '#e5f543',
+                  }
+                },{
+                  value : 150,
+                  //自定义特殊 itemStyle，仅对该数据项有效
+                  itemStyle:{
+                    color: '#63d8f3',
+                  }
+                },{
+                  value : 80,
+                  //自定义特殊 itemStyle，仅对该数据项有效
+                  itemStyle:{
+                    color: '#0b5add',
+                  }
+                },{
+                  value : 70,
+                  //自定义特殊 itemStyle，仅对该数据项有效
+                  itemStyle:{
+                    color: '#f70404',
+                  }
+                }],
+                type: "bar"
+              }
+            ]
       };
       mixLineBar.setOption(option);
       window.addEventListener("resize", function() {

@@ -30,15 +30,33 @@ export default {
             type: "pie",
             radius: ["50%", "70%"],
             data: [
-              { value: 103, name: "金碧社区" },
-              { value: 42, name: "彩龙社区" },
-              { value: 102, name: "滇族部落" },
-              { value: 55, name: "大观网昆明" },
-              { value: 13, name: "我爱昆明" },
-              { value: 65, name: "新昆明" },
-              { value: 32, name: "宝善街" },
-              { value: 10, name: "昆明妈妈网" },
-              { value: 92, name: "云岭清风" }
+              { value: 103, name: "金碧社区", itemStyle:{
+                  color:'#01e452'
+              }},
+              { value: 42, name: "彩龙社区", itemStyle:{
+                  color:'#00b3ff'
+              } },
+              { value: 102, name: "滇族部落", itemStyle:{
+                  color:'#fcdd0c'
+              } },
+              { value: 55, name: "大观网昆明", itemStyle:{
+                  color:'#ffc000'
+              } },
+              { value: 13, name: "我爱昆明", itemStyle:{
+                  color:'#90fb04'
+              } },
+              { value: 65, name: "新昆明", itemStyle:{
+                  color:'#0576fe'
+              } },
+              { value: 32, name: "宝善街", itemStyle:{
+                  color:'#6e05fe'
+              } },
+              { value: 10, name: "昆明妈妈网", itemStyle:{
+                  color:'#fd8cf1'
+              } },
+              { value: 92, name: "云岭清风", itemStyle:{
+                  color:'#ff6023'
+              } }
             ],
             itemStyle: {
               emphasis: {
