@@ -9,6 +9,9 @@
 .layout-footer-center {
     text-align: center;
 }
+.searchPage {
+  background: #f2f7f8!important;
+}
 </style>
 
 <template>
@@ -17,7 +20,9 @@
             <!-- <Header> -->
                 <menu-header :userName="userName" :menu-theme="theme" :menu-list="menuList" :open-names="openNames" @on-change="handleChange"></menu-header>
             <!-- </Header> -->
-            <Content :style="{padding: '20px 0',margin:'0 auto',background:image,width:'100%'}">
+            <Content
+              :class="pageName=='search'&&'searchPage'"
+              :style="{padding: '20px 0',margin:'0 auto',background:image,width:'100%'}">
                 <!-- <Breadcrumb :style="{margin: '20px 0'}">
                     <BreadcrumbItem>Home</BreadcrumbItem>
                     <BreadcrumbItem>Components</BreadcrumbItem>
@@ -88,6 +93,11 @@ export default {
             ],
             openNames: ['home']
         };
+    },
+    computed: {
+      pageName() {
+        return this.$route.name;
+      }
     },
     methods: {
         handleChange(name) {
