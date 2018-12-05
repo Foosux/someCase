@@ -48,7 +48,8 @@ export default {
             },
             label: {
               normal: {
-                color: "#fff"
+                color: "#fff",
+                formatter:'{b}\n{c}条\n{d}%'
                 // formatter: '{b}:{c}/{d}%'
               }
             }
