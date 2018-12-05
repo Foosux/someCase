@@ -37,7 +37,7 @@ export default {
     },
     data() {
         return {
-        image:"url(" + require("../assets/bg.png") + ")",
+            image:"url(" + require("../assets/bg.png") + ")",
             userName: 'test',
             theme: 'dark',
             menuList: [

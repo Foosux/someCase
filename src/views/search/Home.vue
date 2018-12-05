@@ -71,6 +71,13 @@
       <Row :gutter="20">
         <Col span="18">
           <Row>
+            <!-- <AutoComplete
+              v-model="value4"
+              icon="ios-search"
+              placeholder="input here"
+              style="width:300px">
+              <div>123123</div>
+            </AutoComplete> -->
             <Input search size="large" enter-button="搜索" placeholder="搜索线索"/>
           </Row>
           <Card style="marginTop:10px;">
@@ -259,6 +266,7 @@ import chart2 from "./components/chart2.vue";
 import chart3 from "./components/chart3.vue";
 import chart4 from "./components/chart4.vue";
 import axios from "../../axios/index";
+
 export default {
   name: "home",
   components: {
