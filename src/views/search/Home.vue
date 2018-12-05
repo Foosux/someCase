@@ -64,14 +64,24 @@
   color: #06d6d3;
   line-height: 28px;
 }
-.filters p > span {
+.filters .tit {
   text-align: right;
   display: inline-block;
   width: 5em;
+  line-height: 32px;
+}
+.filters > div:not(:last-child){
+  margin-bottom: 10px;
 }
 .filters button {
   margin-right: 10px;
   padding: 5px 10px 6px;
+}
+.filters .flex {
+  display: flex;
+}
+.split {
+  flex: 1;
 }
 </style>
 <template>
@@ -95,35 +105,41 @@
                 <Card>
                   <div>
                     <div class="filters">
-                      <p style="height:38px;">
-                        <span>时间：</span>
+                      <div>
+                        <span class='tit'>时间：</span>
                         <Button type="primary" ghost>近30天</Button>
                         <Button type="text">近7天</Button>
                         <Button type="text">昨天</Button>
                         <Button type="text">今天</Button>
-                      </p>
-                      <p style="height:38px;">
-                        <span>情感：</span>
+                      </div>
+                      <div>
+                        <span class='tit'>情感：</span>
                         <Button type="primary" ghost>全部</Button>
                         <Button type="text">正面</Button>
                         <Button type="text">中性</Button>
                         <Button type="text">负面</Button>
-                      </p>
-                      <p style="height:38px;">
-                        <span>排序：</span>
+                      </div>
+                      <div>
+                        <span class='tit'>排序：</span>
                         <Button type="primary" ghost>时间降序</Button>
                         <Button type="text">时间升序</Button>
-                      </p>
-                      <p style="height:38px;">
-                        <span>媒体平台：</span>
-                        <Button type="primary" ghost>全部（2352）</Button>
-                        <Button type="text">微信（103）</Button>
-                        <Button type="text">微博（42）</Button>
-                        <Button type="text">网页（102）</Button>
-                        <Button type="text">报刊（55）</Button>
-                        <Button type="text">客户端（13）</Button>
-                        <Button type="text">论坛（332）</Button>
-                      </p>
+                      </div>
+                      <div class='flex'>
+                        <span class='tit'>媒体平台：</span>
+                        <span class='split'>
+                          <Button type="primary" ghost>全部（2352）</Button>
+                          <Button type="text">金碧社区（103）</Button>
+                          <Button type="text">彩龙社区（42）</Button>
+                          <Button type="text">滇族部落（102）</Button>
+                          <Button type="text">大观网昆明（55）</Button>
+                          <Button type="text">我爱昆明（13）</Button>
+                          <Button type="text">昆明在线（332）</Button>
+                          <Button type="text">新昆明（65）</Button>
+                          <Button type="text">宝善街（32）</Button>
+                          <Button type="text">昆明妈妈网（10）</Button>
+                          <Button type="text">云岭清风（90）</Button>
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </Card>
@@ -172,24 +188,30 @@
                 <Card>
                   <div>
                     <div class="filters">
-                      <p style="height:38px;">
-                        <span>时间：</span>
+                      <div>
+                        <span class='tit'>时间：</span>
                         <Button type="primary" ghost>全部</Button>
                         <Button type="text">今天</Button>
                         <Button type="text">昨天</Button>
                         <Button type="text">近7天</Button>
                         <Button type="text">近30天</Button>
-                      </p>
-                      <p style="height:38px;">
-                        <span>媒体平台：</span>
-                        <Button type="primary" ghost>全部（2352）</Button>
-                        <Button type="text">微信（103）</Button>
-                        <Button type="text">微博（42）</Button>
-                        <Button type="text">网页（102）</Button>
-                        <Button type="text">报刊（55）</Button>
-                        <Button type="text">客户端（13）</Button>
-                        <Button type="text">论坛（332）</Button>
-                      </p>
+                      </div>
+                      <div class='flex'>
+                        <span class='tit'>媒体平台：</span>
+                        <span class='split'>
+                          <Button type="primary" ghost>全部（2352）</Button>
+                          <Button type="text">金碧社区（103）</Button>
+                          <Button type="text">彩龙社区（42）</Button>
+                          <Button type="text">滇族部落（102）</Button>
+                          <Button type="text">大观网昆明（55）</Button>
+                          <Button type="text">我爱昆明（13）</Button>
+                          <Button type="text">昆明在线（332）</Button>
+                          <Button type="text">新昆明（65）</Button>
+                          <Button type="text">宝善街（32）</Button>
+                          <Button type="text">昆明妈妈网（10）</Button>
+                          <Button type="text">云岭清风（90）</Button>
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </Card>

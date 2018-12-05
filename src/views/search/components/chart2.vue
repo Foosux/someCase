@@ -30,12 +30,15 @@ export default {
             type: "pie",
             radius: ["50%", "70%"],
             data: [
-              { value: 400, name: "微信" },
-              { value: 335, name: "微博" },
-              { value: 310, name: "网页" },
-              { value: 210, name: "报刊" },
-              { value: 150, name: "客户端" },
-              { value: 80, name: "论坛" }
+              { value: 103, name: "金碧社区" },
+              { value: 42, name: "彩龙社区" },
+              { value: 102, name: "滇族部落" },
+              { value: 55, name: "大观网昆明" },
+              { value: 13, name: "我爱昆明" },
+              { value: 65, name: "新昆明" },
+              { value: 32, name: "宝善街" },
+              { value: 10, name: "昆明妈妈网" },
+              { value: 92, name: "云岭清风" }
             ],
             itemStyle: {
               emphasis: {
