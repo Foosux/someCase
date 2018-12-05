@@ -1,6 +1,6 @@
 <template>
     <div>
-        <img src="../../assets/jkdp.jpeg"/>
+        <img src="../../assets/jkdp_noHead.png"/>
     </div>
 </template>
 <style scoped>
@@ -9,4 +9,3 @@ img{
     display: block;
 }
 </style>
-
