@@ -31,8 +31,10 @@
 .text-con1 li {
   line-height: 30px;
   color: #fff;
-  border-bottom: 1px dashed #ccc;
   overflow: hidden;
+}
+.text-con3 li:not(:last-child) {
+  border-bottom: 1px dashed #ccc;
 }
 .text-con3 li a {
   color: #fff;
@@ -47,10 +49,10 @@
 .text-con1 li a {
   color: #fff;
 }
-.hot-list li {
+.home .hot-list li {
   line-height: 30px;
 }
-.hot-list li span {
+.home .hot-list li span {
   width: 18px;
   height: 18px;
   line-height: 18px;
@@ -102,7 +104,6 @@
 .media-con li {
   height: 16px;
   line-height: 16px;
-  border: 1px solid #17bcfd;
   float: left;
   display: inline-block;
   padding: 0 2px;
@@ -122,6 +123,16 @@
   background: red;
   display: inline-block;
   margin-right: 3px;
+}
+.flexBox {
+  display: flex;
+  align-items: center;
+}
+.flexBox span:nth-child(2) {
+  flex:1;
+}
+.flexBox span:last-child {
+  margin-left:5px;
 }
 </style>
 <template>
@@ -181,17 +192,30 @@
       <Row style="marginTop:10px;">
         <Col span="6">
           <Card :padding="10" :style="{background:image}">
-            <p slot="title" style="color:#fff;">热点关键词</p>
+            <p slot="title" style="color:#fff;">
+              热点关键词
+              <a style="float:right;" href='javascript:void(0)'>更多</a>
+            </p>
             <div>
               <ul class="text-con3">
                 <li v-for="(item,index) in hitWord" :key="index">
                   <router-link to="search">
-                    <div>
+                    <div class='flexBox'>
                       <span style="padding:0 5px;">{{index+1}}</span>
                       <span
-                        style="display:inline-block;width:210px;height:20px; white-space:nowrap;text-overflow: ellipsis; overflow:hidden;"
+                        style="width:210px; white-space:nowrap;text-overflow: ellipsis; overflow:hidden;"
                       >{{item.keyword}}</span>
-                      <b style="float:right;">{{item.hotspot}}</b>
+                      <span>{{item.hotspot}}</span>
+                      <span
+                        :style="{
+                          background:
+                          item.trend==1
+                            ? upBg
+                            : item.trend==0
+                              ? downBg
+                              : 'none',
+                          width:'10px',height:'16px',marginLeft: '5px'
+                        }" ></span>
                     </div>
                   </router-link>
                 </li>
@@ -357,6 +381,8 @@ export default {
   data() {
     return {
       //image:"url(" + require("../../assets/bg.png") + ")",
+      upBg: "url(" + require("../../assets/up.png") + ")",
+      downBg: "url(" + require("../../assets/down.png") + ")",
       image: "rgba(0,0,0,0.1)",
       imgFot: "url(" + require("../../assets/footer.png") + ")",
       type: 1,

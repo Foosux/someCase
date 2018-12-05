@@ -9,16 +9,21 @@
   color: #919191;
 }
 .hot-list li {
+  display: flex;
+  align-items: center;
+  line-height: 45px;
+}
+.hot-list li:not(:last-child) {
   border-bottom: 1px dashed #ccc;
 }
 .text-con li {
   padding: 28px;
   border-bottom: 1px dashed #ccc;
 }
-.hot-list li {
-  line-height: 30px;
+.hot-list li span:nth-child(2) {
+  flex: 1;
 }
-.hot-list li span {
+.hot-list li .num {
   width: 18px;
   height: 18px;
   line-height: 18px;
@@ -82,6 +87,12 @@
 }
 .split {
   flex: 1;
+}
+.titWrap .ivu-card-body{
+  padding: 0 16px;
+}
+.moreInfo {
+  float: right;
 }
 </style>
 <template>
@@ -256,15 +267,28 @@
           </Card>
         </Col>
         <Col span="6">
-          <Card>
-            <p slot="title">热点关键词</p>
-            <div style="padding:0 20px;">
+          <Card class='titWrap'>
+            <p slot="title">热点关键词<a class='moreInfo' href='javascript:void(0)'>更多</a></p>
+            <div>
               <ul class="hot-list">
                 <li v-for="(item,index) in aHot" :key="index">
                   <span
-                    :style="{background:index==0?'red':index==1?'orange':index==2?'yellow':'#4ec7fa'}"
+                    class='num'
+                    :style="{color:'#FFF',background:index==0?'#ff0404':index==1?'#fe9104':index==2?'#fbb803':'#4ec7fa'}"
                   >{{index}}</span>
-                  {{item}}
+                  <span>{{item.title}}</span>
+                  <span>{{item.count}}</span>
+                  <span
+                    :style="{
+                      background:
+                      item.upDown==1
+                        ? upBg
+                        : item.upDown==2
+                          ? downBg
+                          : 'none',
+                      width:'10px',height:'16px',marginLeft: '5px'
+                    }" >
+                  </span>
                 </li>
               </ul>
             </div>
@@ -309,6 +333,8 @@ export default {
   data() {
     return {
       imgFot: "url(" + require("../../assets/footer.png") + ")",
+      upBg: "url(" + require("../../assets/up.png") + ")",
+      downBg: "url(" + require("../../assets/down.png") + ")",
       // 文章
       aText: [
         {
@@ -352,20 +378,55 @@ export default {
       ],
       titList: [12, 12],
       // 热点list
-      aHot: [
-        "老师的街坊邻居",
-        "老师的街坊邻居",
-        "老师的街坊邻居",
-        "杀戮空间发了打法",
-        "老师的街坊邻居",
-        "是非窝太晚日2522",
-        "老师的街坊邻居",
-        "外套43感受到感受到",
-        "  说的房",
-        "老师的街坊邻居",
-        "撒地方撒的说的sd",
-        "老师的街坊邻居",
-        " 色任务玩日无日峰人事"
+      aHot: [{
+        title: "嵩明县疑似出现非洲猪瘟",
+        count: 18250,
+        upDown: 1
+      }, {
+        title: "禄劝县龙马村村名滥伐林木",
+        count: 16468,
+        upDown: 0
+      },
+      {
+        title: "石林县黑中介套路租房",
+        count: 12678,
+        upDown: 2
+      },
+      {
+        title: "寻甸县八宝镇垃圾焚烧污染",
+        count:  9876,
+        upDown: 0
+      },
+      {
+        title: "宜良县御景新城烂尾",
+        count: 6789,
+        upDown: 0
+      },
+      {
+        title: "晋宁县查获违禁药品",
+        count: 4673,
+        upDown: 0
+      },
+      {
+        title: "禄劝县龙马村村名滥伐林木",
+        count: 3676,
+        upDown: 0
+      },
+      {
+        title: "寻甸县八宝镇垃圾焚烧污染",
+        count: 2456,
+        upDown: 0
+      },
+      {
+        title: "晋宁县查获违禁药品",
+        count: 1897,
+        upDown: 0
+      },
+      {
+        title: "石林县黑中介套路租房",
+        count: 1657,
+        upDown: 0
+      }
       ]
     };
   },
