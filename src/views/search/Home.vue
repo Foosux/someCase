@@ -17,7 +17,7 @@
   border-bottom: 1px dashed #ccc;
 }
 .text-con li {
-  padding: 28px;
+  padding: 28px 0 28px 50px;
   border-bottom: 1px dashed #ccc;
 }
 .hot-list li span:nth-child(2) {
@@ -156,25 +156,25 @@
                 </Card>
                 <Card style="marginTop:10px;">
                   <p slot="title">原文链接</p>
-                    <div style="padding:0 20px;">
+                    <div style="margin:-20px 0 20px;">
                       <ul class="text-con">
                         <li v-for="(item,index) in aText" :key="index">
                           <Button
                             ghost
                             :type="(item.news_id%3)==1?'success':(item.news_id%3)==2?'error':'info'"
-                            style="float:left;marginLeft:-50px;marginRight:10px;"
+                            style="float:left;margin: 5px 10px 0px -50px;"
                             size="small"
                           >{{(item.news_id%3)==1?'正面':(item.news_id%3)==2?'负面':'中性'}}</Button>
                           <div>
-                            <p style="fontSize:16px;lineHeight:34px;">
-                              <a target="_blank" :href="item.url">{{item.name}}</a>
+                            <p style="fontSize:20px;lineHeight:34px;">
+                              <a target="_blank" style="color:#313131;" :href="item.url">{{item.name}}</a>
                             </p>
-                            <p style="color:#7d7d7d">{{item.name}} 讨论热点{{item.discuss_count}} 浏览量 {{item.view_count}}</p>
+                            <p style="color:#7d7d7d;fontSize:16px;">{{item.name}} 讨论热点{{item.discuss_count}} 浏览量 {{item.view_count}}</p>
                             <p style="lineHeight:30px;">
                               <a>相似文章{{item.discuss_count}}</a>
                             </p>
                             <div>
-                              <span style="float:left;">主题词：</span>
+                              <span style="float:left;color:#7d7d7d;fontSize:14px;">主题词：</span>
                               <!-- <span
                                 style="float:left;padding:0 10px;"
                                 v-for="(item_word,index_word) in item.word"
