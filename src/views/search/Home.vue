@@ -64,6 +64,15 @@
   color: #06d6d3;
   line-height: 28px;
 }
+.filters p > span {
+  text-align: right;
+  display: inline-block;
+  width: 5em;
+}
+.filters button {
+  margin-right: 10px;
+  padding: 5px 10px 6px;
+}
 </style>
 <template>
   <div>
@@ -85,29 +94,29 @@
               <TabPane label="信息汇总" name="tab1">
                 <Card>
                   <div>
-                    <div>
+                    <div class="filters">
                       <p style="height:38px;">
                         <span>时间：</span>
-                        <Button type="dashed">近30天</Button>
+                        <Button type="primary" ghost>近30天</Button>
                         <Button type="text">近7天</Button>
                         <Button type="text">昨天</Button>
                         <Button type="text">今天</Button>
                       </p>
                       <p style="height:38px;">
                         <span>情感：</span>
-                        <Button type="dashed">全部</Button>
+                        <Button type="primary" ghost>全部</Button>
                         <Button type="text">正面</Button>
                         <Button type="text">中性</Button>
                         <Button type="text">负面</Button>
                       </p>
                       <p style="height:38px;">
                         <span>排序：</span>
-                        <Button type="dashed">时间降序</Button>
+                        <Button type="primary" ghost>时间降序</Button>
                         <Button type="text">时间升序</Button>
                       </p>
                       <p style="height:38px;">
-                        <span>媒体平台</span>
-                        <Button type="dashed">全部（2352）</Button>
+                        <span>媒体平台：</span>
+                        <Button type="primary" ghost>全部（2352）</Button>
                         <Button type="text">微信（103）</Button>
                         <Button type="text">微博（42）</Button>
                         <Button type="text">网页（102）</Button>
@@ -162,10 +171,10 @@
               <TabPane label="内容分析" name="tab2">
                 <Card>
                   <div>
-                    <div>
+                    <div class="filters">
                       <p style="height:38px;">
                         <span>时间：</span>
-                        <Button type="dashed">全部</Button>
+                        <Button type="primary" ghost>全部</Button>
                         <Button type="text">今天</Button>
                         <Button type="text">昨天</Button>
                         <Button type="text">近7天</Button>
@@ -173,7 +182,7 @@
                       </p>
                       <p style="height:38px;">
                         <span>媒体平台：</span>
-                        <Button type="dashed">全部（2352）</Button>
+                        <Button type="primary" ghost>全部（2352）</Button>
                         <Button type="text">微信（103）</Button>
                         <Button type="text">微博（42）</Button>
                         <Button type="text">网页（102）</Button>
