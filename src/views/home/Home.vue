@@ -157,23 +157,24 @@
             <Row>
               <Col span="18">
                 <ButtonGroup>
-                  <Button type="primary" @click="getHitWord()">全部</Button>
-                  <Button type="default" @click="nodeVal={val:2}">
+                  <!-- getHitWord()  -->
+                  <Button type="primary" @click="nodeVal={val:0}">全部</Button>
+                  <Button type="default" @click="nodeVal={val:1}">
                     <span class="dot" style="background:#fd7201;"></span>危害食品安全
                   </Button>
-                  <Button type="default" @click="nodeVal={val:3}">
+                  <Button type="default" @click="nodeVal={val:2}">
                     <span class="dot" style="background:#948617;"></span>危害药品安全
                   </Button>
-                  <Button type="default" @click="nodeVal={val:4}">
+                  <Button type="default" @click="nodeVal={val:3}">
                     <span class="dot" style="background:#03f85f;"></span>损害自然资源
                   </Button>
-                  <Button type="default" @click="nodeVal={val:5}">
+                  <Button type="default" @click="nodeVal={val:4}">
                     <span class="dot" style="background:#03ece7;"></span>损害生态环境
                   </Button>
-                  <Button type="default" @click="nodeVal={val:6}">
+                  <Button type="default" @click="nodeVal={val:5}">
                     <span class="dot" style="background:#b802fc;"></span>违法出让国有土地使用权
                   </Button>
-                  <Button type="default" @click="nodeVal={val:7}">
+                  <Button type="default" @click="nodeVal={val:6}">
                     <span class="dot" style="background:#ea06b7;"></span>损害消费者权益
                   </Button>
                 </ButtonGroup>
