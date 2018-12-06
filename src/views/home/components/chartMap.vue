@@ -14,14 +14,18 @@ export default {
         { name: "晋宁线", value: 8773 },
         { name: "西山区", value: 7876 },
         { name: "呈贡区", value: 18772 },
-        { name: "东川区", value: 6553 }
+        { name: "东川区", value: 6553 },
+        { name: "东川区1", value: 6553 },
+        { name: "东川区2", value: 6553 },
       ],
       bright_pos: {
         '寻甸回族彝族自治县': [350, 280],
         '晋宁线': [290, 480],
         '西山区': [270, 370],
         '呈贡区': [340, 430],
-        '东川区': [360, 120]
+        '东川区': [360, 120],
+        '东川区1': [370, 220],
+        '东川区2': [300, 170],
       }
     };
   },
@@ -375,7 +379,7 @@ export default {
                 .sort(function(a, b) {
                   return b.value - a.value;
                 })
-                .slice(0, 6)
+                .slice(0, 7)
             ),
             symbolSize: 10,
             showEffectOn: "render",
@@ -394,10 +398,12 @@ export default {
                 padding: 4,
                 formatter: (obj)=> {
                   // console.log(6666666, obj)
-                  let arr = obj.data.tag.sort(function() {
-                      return .5 - Math.random();
-                  })
-                  return `${obj.name}-${arr[obj.dataIndex].name}（${arr[obj.dataIndex].num}）`
+                  let arr = obj.data.tag
+                  // .sort(function() {
+                  //     return .5 - Math.random();
+                  // })
+                  // ${obj.name}-
+                  return `${arr[obj.dataIndex].name}（${arr[obj.dataIndex].num}）`
                 },
               }
             },
@@ -426,6 +432,8 @@ export default {
             { name: "西山区", value: 7876 },
             { name: "呈贡区", value: 18772 },
             { name: "东川区", value: 6553 },
+            { name: "东川区1", value: 6553 },
+            { name: "东川区2", value: 6553 },
           ];
           this.bright_pos = {
             '寻甸回族彝族自治县': [350, 280],
@@ -433,77 +441,113 @@ export default {
             '西山区': [270, 370],
             '呈贡区': [340, 430],
             '东川区': [360, 120],
+            '东川区1': [370, 220],
+            '东川区2': [300, 170],
           };
           this.initChart();
           break;
         case 1:
           this.brightData = [
+            { name: "寻甸回族彝族自治县", value: 13289 },
             { name: "晋宁线", value: 8773 },
             { name: "西山区", value: 7876 },
             { name: "呈贡区", value: 18772 },
             { name: "东川区", value: 6553 },
+            { name: "东川区1", value: 6553 },
+            { name: "东川区2", value: 6553 },
           ];
           this.bright_pos = {
-            '晋宁线': [290, 480],
-            '西山区': [270, 370],
-            '呈贡区': [340, 430],
-            '东川区': [360, 120],
+            '寻甸回族彝族自治县': [300, 290],
+            '晋宁线': [290, 450],
+            '西山区': [280, 340],
+            '呈贡区': [350, 410],
+            '东川区': [370, 130],
+            '东川区1': [350, 260],
+            '东川区2': [310, 190],
           };
           this.initChart();
           break;
         case 2:
            this.brightData = [
-            { name: "晋宁线", value: 8773 },
-            { name: "西山区", value: 7876 },
-            { name: "东川区", value: 6553 }
+             { name: "寻甸回族彝族自治县", value: 13289 },
+             { name: "晋宁线", value: 8773 },
+             { name: "西山区", value: 7876 },
+             { name: "呈贡区", value: 18772 },
+             { name: "东川区", value: 6553 },
+             { name: "东川区1", value: 6553 },
+             { name: "东川区2", value: 6553 },
           ];
           this.bright_pos = {
-            '晋宁线': [290, 480],
-            '西山区': [270, 370],
-            '东川区': [360, 120]
+            '寻甸回族彝族自治县': [325, 260],
+            '西山区': [362, 112],
+            '晋宁线': [290, 470],
+            '呈贡区': [348, 430],
+            '东川区': [300, 220],
+            '东川区1': [350, 356],
+            '东川区2': [270, 145],
           };
           this.initChart();
           break;
         case 3:
          this.brightData = [
-            { name: "寻甸回族彝族自治县", value: 13289 },
-            { name: "西山区", value: 7876 },
-            { name: "呈贡区", value: 18772 },
+           { name: "寻甸回族彝族自治县", value: 13289 },
+           { name: "晋宁线", value: 8773 },
+           { name: "西山区", value: 7876 },
+           { name: "呈贡区", value: 18772 },
+           { name: "东川区", value: 6553 },
+           { name: "东川区1", value: 6553 },
+           { name: "东川区2", value: 6553 },
           ];
           this.bright_pos = {
             '寻甸回族彝族自治县': [350, 280],
+            '西山区': [342, 122],
             '晋宁线': [290, 480],
             '呈贡区': [340, 430],
+            '东川区': [300, 200],
+            '东川区1': [370, 320],
+            '东川区2': [270, 140],
           };
           this.initChart();
           break;
         case 4:
          this.brightData = [
-            { name: "寻甸回族彝族自治县", value: 13289 },
-            { name: "晋宁线", value: 8773 },
-            { name: "呈贡区", value: 18772 },
-            { name: "东川区", value: 6553 }
+           { name: "寻甸回族彝族自治县", value: 13289 },
+           { name: "晋宁线", value: 8773 },
+           { name: "西山区", value: 7876 },
+           { name: "呈贡区", value: 18772 },
+           { name: "东川区", value: 6553 },
+           { name: "东川区1", value: 6553 },
+           { name: "东川区2", value: 6553 },
           ];
           this.bright_pos = {
-            '寻甸回族彝族自治县': [350, 280],
-            '晋宁线': [290, 480],
-            '呈贡区': [340, 430],
-            '东川区': [360, 120]
+            '寻甸回族彝族自治县': [320, 280],
+            '西山区': [352, 122],
+            '晋宁线': [290, 470],
+            '呈贡区': [344, 435],
+            '东川区': [300, 220],
+            '东川区1': [330, 350],
+            '东川区2': [270, 140],
           };
           this.initChart();
           break;
         case 5:
           this.brightData = [
+            { name: "寻甸回族彝族自治县", value: 13289 },
             { name: "晋宁线", value: 8773 },
             { name: "西山区", value: 7876 },
             { name: "呈贡区", value: 18772 },
-            { name: "东川区", value: 6553 }
+            { name: "东川区", value: 6553 },
+            { name: "东川区1", value: 6553 },
+            { name: "东川区2", value: 6553 },
           ];
           this.bright_pos = {
-            '晋宁线': [290, 480],
-            '西山区': [270, 370],
-            '呈贡区': [340, 430],
-            '东川区': [360, 120]
+            '寻甸回族彝族自治县': [300, 240],
+            '晋宁线': [350, 380],
+            '西山区': [280, 309],
+            '呈贡区': [300, 490],
+            '东川区': [360, 200],
+            '东川区1': [380, 340],
+            '东川区2': [310, 170],
           };
           this.initChart();
           break;
@@ -511,27 +555,20 @@ export default {
           this.brightData = [
             { name: "寻甸回族彝族自治县", value: 13289 },
             { name: "晋宁线", value: 8773 },
-          ];
-          this.bright_pos = {
-            '寻甸回族彝族自治县': [350, 280],
-            '晋宁线': [290, 480],
-          };
-          this.initChart();
-          break;
-        case 7:
-          this.brightData = [
-            { name: "寻甸回族彝族自治县", value: 13289 },
-            { name: "晋宁线", value: 8773 },
             { name: "西山区", value: 7876 },
             { name: "呈贡区", value: 18772 },
-            { name: "东川区", value: 6553 }
+            { name: "东川区", value: 6553 },
+            { name: "东川区1", value: 6553 },
+            { name: "东川区2", value: 6553 },
           ];
           this.bright_pos = {
-            '寻甸回族彝族自治县': [350, 280],
-            '晋宁线': [290, 480],
-            '西山区': [270, 370],
-            '呈贡区': [340, 430],
-            '东川区': [360, 120]
+            '寻甸回族彝族自治县': [325, 260],
+            '西山区': [352, 115],
+            '晋宁线': [295, 478],
+            '呈贡区': [324, 430],
+            '东川区': [300, 229],
+            '东川区1': [350, 356],
+            '东川区2': [275, 149],
           };
           this.initChart();
           break;
