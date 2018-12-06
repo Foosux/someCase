@@ -199,7 +199,12 @@
             <div>
               <ul class="text-con3">
                 <li v-for="(item,index) in hitWord" :key="index">
-                  <router-link to="search">
+                  <router-link :to="{
+                    path: '/search',
+                    query: {
+                      title: item.keyword
+                    }
+                  }">
                     <div class='flexBox'>
                       <span style="padding:0 5px;">{{index+1}}</span>
                       <span
@@ -261,28 +266,6 @@
           </Card>
         </Col>
       </Row>
-      <!-- 两个图 -->
-      <Row :gutter="10">
-        <Col span="12" style="marginTop:10px;">
-          <Card :style="{background:image}">
-            <p slot="title" style="color:#fff;">热词走势</p>
-            <div style="padding:0 20px;">
-              <!-- <chart2></chart2> -->
-              <chart6></chart6>
-            </div>
-          </Card>
-        </Col>
-        <Col span="12" style="marginTop:10px;">
-          <Card :style="{background:image}">
-            <p slot="title" style="color:#fff;">情感走势</p>
-            <div style="padding:0 20px;">
-              <!-- <chart4></chart4> -->
-              <chart5></chart5>
-            </div>
-          </Card>
-        </Col>
-      </Row>
-      <!-- 最后一行 -->
       <Row :gutter="10">
         <Col span="8" style="marginTop:10px;">
           <Card :style="{background:image}">
@@ -338,6 +321,27 @@
             </div>
           </Card>
         </Col>
+      </Row>
+      <!-- 两个图 -->
+      <Row :gutter="10">
+        <Col span="12" style="marginTop:10px;">
+          <Card :style="{background:image}">
+            <p slot="title" style="color:#fff;">热词走势</p>
+            <div style="padding:0 20px;">
+              <!-- <chart2></chart2> -->
+              <chart6></chart6>
+            </div>
+          </Card>
+        </Col>
+        <Col span="12" style="marginTop:10px;">
+          <Card :style="{background:image}">
+            <p slot="title" style="color:#fff;">情感走势</p>
+            <div style="padding:0 20px;">
+              <!-- <chart4></chart4> -->
+              <chart5></chart5>
+            </div>
+          </Card>
+        </Col>
         <Col span="24" :style="{background:imgFot,height:'50px',marginTop:'10px'}">
           <div class="footer-left">
             <p>当前时间</p>
@@ -352,6 +356,7 @@
           </div>
         </Col>
       </Row>
+      
     </div>
   </div>
 </template>

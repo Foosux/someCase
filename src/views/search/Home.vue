@@ -106,7 +106,7 @@
               size="large" 
               enter-button="搜索" 
               placeholder="搜索线索"
-              @on-change="typeIn"
+              v-model="searchKeyWords"
               @on-search="searchHandle"
             />
           </Row>
@@ -447,7 +447,12 @@ export default {
     };
   },
   mounted() {
-    this.searchInfo()
+    let params = {}
+    if(this.$route.query.title) {
+      this.searchKeyWords = this.$route.query.title
+      params.title = this.$route.query.title
+    }
+    this.searchInfo({...params})
   },
   methods: {
     searchInfo(params) {
@@ -466,7 +471,6 @@ export default {
           item.discuss_count = Math.floor(Math.random()*1000)
         })
         _this.aText = response.data;
-        //console.log(_this.aText);
       })
       .catch(function(error) {
         console.log(error);
@@ -474,9 +478,6 @@ export default {
     },
     changePage(page) {
       this.searchInfo({page})
-    },
-    typeIn(e) {
-      this.searchKeyWords = e.target.value
     },
     searchHandle() {
       this.searchInfo({title: this.searchKeyWords})
