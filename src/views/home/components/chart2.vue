@@ -12,7 +12,6 @@ export default {
   },
   methods: {
     createRandomItemStyle(type) {
-      console.log(type)
       return {
         normal: {    
           color: ['rgb(253, 114, 1)', 'rgb(148, 134, 23)', 'rgb(3, 248, 95)', 'rgb(3, 236, 231)', 'rgb(184, 2, 252)', 'rgb(234, 6, 183)'][type] 
