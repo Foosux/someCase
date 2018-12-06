@@ -243,7 +243,7 @@
         <Col span="6">
           <Card :style="{background:image}">
             <p slot="title" style="color:#fff;">主题词云</p>
-            <div style="padding:0 20px;height:180px;">
+            <div style="height:180px;">
               <!-- <p>主题词云</p> -->
               <div style="margin:0 auto;">
                 <chart2></chart2>
@@ -253,16 +253,11 @@
 
           <Card :style="{background:image,marginTop:'10px'}">
             <p slot="title" style="color:#fff;">媒体分布</p>
+            
             <div style="margin:0 auto;">
-              <ul class="media-con">
-                <li class="media-act">彩龙社区</li>
-                <li>我爱昆明</li>
-                <li>昆明在线</li>
-                <!-- <li>宝善街</li> -->
-                <li>新昆明</li>
-              </ul>
               <chart1></chart1>
             </div>
+            
           </Card>
         </Col>
       </Row>
@@ -326,7 +321,7 @@
       <Row :gutter="10">
         <Col span="12" style="marginTop:10px;">
           <Card :style="{background:image}">
-            <p slot="title" style="color:#fff;">热词走势</p>
+            <p slot="title" style="color:#fff;">情感走势</p>
             <div style="padding:0 20px;">
               <!-- <chart2></chart2> -->
               <chart6></chart6>

@@ -1,5 +1,5 @@
 <template>
-  <div id="chart2" style="width:230px;height:180px;"></div>
+  <div id="chart2" style="width:260px;height:180px;"></div>
 </template>
 <script>
 import echarts from "echarts";
@@ -11,18 +11,11 @@ export default {
     return {};
   },
   methods: {
-    createRandomItemStyle() {
+    createRandomItemStyle(type) {
+      console.log(type)
       return {
-        normal: {
-          
-          color:'yellow'
-            // "rgb(" +
-            // [
-            //   Math.round(Math.random() * 160),
-            //   Math.round(Math.random() * 160),
-            //   Math.round(Math.random() * 160)
-            // ].join(",") +
-            // ")"
+        normal: {    
+          color: ['rgb(253, 114, 1)', 'rgb(148, 134, 23)', 'rgb(3, 248, 95)', 'rgb(3, 236, 231)', 'rgb(184, 2, 252)', 'rgb(234, 6, 183)'][type] 
         }
       };
     },
@@ -37,110 +30,110 @@ export default {
           show: true
         },
        
-        series: [
-          {
-            name: "",
-            type: "wordCloud",
-            size: ["100%", "90%"],
-            // textRotation: [0, 45, 90, -45],
+        series: [{
+            name: '',
+            type: 'wordCloud',
+            size: ['100%', '100%'],
+            textRotation : [0, 45, 90, -45],
             textPadding: 0,
             autoSize: {
-              enable: true,
-              minSize: 14
+                enable: true,
+                minSize: 12,
+                maxSize:14
             },
             data: [
-              {
-                name: "违法开采",
-                value: 10000,
-                textStyle: {
-                  normal: {
-                    color: "yellow"
-                  }
+                {
+                    name: "食物中毒",
+                    value: 1000,
+                    textStyle: this.createRandomItemStyle(0)
+                },
+                {
+                    name: "毒品",
+                    value: 218,
+                    textStyle: this.createRandomItemStyle(1)
+                },
+                {
+                    name: "雾霾",
+                    value: 438,
+                    textStyle: this.createRandomItemStyle(2)
+                },
+                {
+                    name: "滥伐林木",
+                    value: 405,
+                    textStyle: this.createRandomItemStyle(3)
+                },
+                {
+                    name: "违建",
+                    value: 246,
+                    textStyle: this.createRandomItemStyle(4)
+                },
+                {
+                    name: "宰客",
+                    value: 244,
+                    textStyle: this.createRandomItemStyle(5)
+                },
+                {
+                    name: "农药残留",
+                    value: 189,
+                    textStyle: this.createRandomItemStyle(0)
+                },
+                {
+                    name: "民间偏方",
+                    value: 148,
+                    textStyle: this.createRandomItemStyle(1)
+                },
+                {
+                    name: "火灾",
+                    value: 111,
+                    textStyle: this.createRandomItemStyle(2)
+                },
+                {
+                    name: "偷猎",
+                    value: 96,
+                    textStyle: this.createRandomItemStyle(3)
+                },
+                {
+                    name: "侵占",
+                    value: 84,
+                    textStyle: this.createRandomItemStyle(4)
+                },
+                {
+                    name: "骗局",
+                    value: 58,
+                    textStyle: this.createRandomItemStyle(5)
+                },
+                {
+                    name: "绿色食品",
+                    value: 189,
+                    textStyle: this.createRandomItemStyle(0)
+                },
+                {
+                    name: "假药",
+                    value: 148,
+                    textStyle: this.createRandomItemStyle(1)
+                },
+                {
+                    name: "污水",
+                    value: 111,
+                    textStyle: this.createRandomItemStyle(2)
+                },
+                {
+                    name: "森林大火",
+                    value: 96,
+                    textStyle: this.createRandomItemStyle(3)
+                },
+                {
+                    name: "城中村",
+                    value: 84,
+                    textStyle: this.createRandomItemStyle(4)
+                },
+                {
+                    name: "非法集资",
+                    value: 58,
+                    textStyle: this.createRandomItemStyle(5)
                 }
-              },
-              {
-                name: "违章建筑",
-                value: 6181,
-                textStyle: this.createRandomItemStyle()
-              },
-              {
-                name: "垃圾焚烧",
-                value: 4386,
-                textStyle: this.createRandomItemStyle()
-              },
-              {
-                name: "非洲猪瘟",
-                value: 4055,
-                textStyle: this.createRandomItemStyle()
-              },
-              {
-                name: "违法开采",
-                value: 6181,
-                textStyle: this.createRandomItemStyle()
-              },
-              {
-                name: "烂尾楼",
-                value: 4386,
-                textStyle: this.createRandomItemStyle()
-              },
-              {
-                name: "污水排放",
-                value: 4055,
-                textStyle: this.createRandomItemStyle()
-              },
-              {
-                name: "雾霾",
-                value: 4055,
-                textStyle: this.createRandomItemStyle()
-              },
-              {
-                name: "违禁药品",
-                value: 6181,
-                textStyle: this.createRandomItemStyle()
-              },
-              {
-                name: "环境污染",
-                value: 4386,
-                textStyle: this.createRandomItemStyle()
-              },
-              {
-                name: "黑中介",
-                value: 4055,
-                textStyle: this.createRandomItemStyle()
-              },
-              {
-                name: "暴力执法",
-                value: 5219,
-                textStyle: this.createRandomItemStyle()
-              },
-              {
-                name: "雪崩",
-                value: 3847,
-                textStyle: this.createRandomItemStyle()
-              },
-              {
-                name: "套路租房",
-                value: 2038,
-                textStyle: this.createRandomItemStyle()
-              },
-              {
-                name: "美容贷",
-                value: 2038,
-                textStyle: this.createRandomItemStyle()
-              },
-              {
-                name: "套牌",
-                value: 2038,
-                textStyle: this.createRandomItemStyle()
-              },
-              {
-                name: "超速",
-                value: 2038,
-                textStyle: this.createRandomItemStyle()
-              }
             ]
-          }
-        ]
+        }]
       };
       mixLineBar.setOption(option);
       window.addEventListener("resize", function() {

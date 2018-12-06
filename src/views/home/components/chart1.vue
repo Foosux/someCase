@@ -19,9 +19,9 @@ export default {
         // title : {
         //     subtext: '单位:篇'
         // },
-       legend: {
+       // legend: {
             // data:["新昆明", "彩龙社区", "我爱昆明", "昆明在线"]
-        },
+        // },
         // 提示框组件
         tooltip: {
           confine: true,
@@ -41,11 +41,17 @@ export default {
           type: "category",
           data: ["新昆明", "彩龙社区", "我爱昆明","昆明在线","金碧社区"],
           color:"#fff",
-          
+          axisTick: {show: false},
         },
         yAxis: {
-        name: '单位：篇',
-          type: "value"
+          name: '单位：篇',
+          type: "value",
+          splitLine: {
+            // show: false
+            lineStyle: {
+              color: 'rgba(255,255,255, .1)',
+            }
+          }
         },
         series: [
           {

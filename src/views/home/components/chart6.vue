@@ -45,7 +45,13 @@ export default {
     ],
     yAxis : [
         {
-            type : 'value'
+            type : 'value',
+            splitLine: {
+              // show: false
+              lineStyle: {
+                color: 'rgba(255,255,255, .1)',
+              }
+            }
         }
     ],
     series : [
