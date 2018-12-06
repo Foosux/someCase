@@ -39,7 +39,7 @@ export default {
        
         series: [
           {
-            name: "Google Trends",
+            name: "",
             type: "wordCloud",
             size: ["100%", "90%"],
             // textRotation: [0, 45, 90, -45],

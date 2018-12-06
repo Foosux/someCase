@@ -64,7 +64,8 @@ export default {
                     color: '#f70404',
                   }
                 }],
-                type: "bar"
+                type: "bar",
+                barWidth:'10',
               }
             ]
       };

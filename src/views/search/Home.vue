@@ -172,8 +172,9 @@
                             <!--
                             <p style="color:#7d7d7d;fontSize:16px;">{{item.name}} 讨论热点{{item.discuss_count}} 浏览量 {{item.view_count}}</p>
                              -->
+                            <p class='dec'>{{item.content}}</p>
                             <p style="lineHeight:30px;">
-                              <a>相似文章 {{item.discuss_count}} </a>
+                              <a href='javascript: void(0)'>相似文章 {{item.discuss_count}} </a>
                             </p>
                 
                             <div>
@@ -468,7 +469,8 @@ export default {
       .then(function(response) {
         response.data.data.forEach((item, i) => {
           item.time = ["2018年11月3日","2017年6月23日","2018年1月5日","2018年8月14日","2016年7月20日","2018年10月6日","2018年3月5日","2018年5月21日","2018年9月17日","2015年8月3日"][i]
-          item.discuss_count = Math.floor(Math.random()*1000)
+          item.discuss_count = Math.floor(Math.random()*100)
+          item.content = _this.formatToText(item.content)
         })
         _this.aText = response.data;
       })
@@ -481,6 +483,11 @@ export default {
     },
     searchHandle() {
       this.searchInfo({title: this.searchKeyWords})
+    },
+    formatToText(HTML) {
+      let input = HTML;
+      let text = input.replace(/<(style|script|iframe)[^>]*?>[\s\S]+?<\/\1\s*>/gi,'').replace(/<[^>]+?>/g,'').replace(/\s+/g,' ').replace(/ /g,' ').replace(/>/g,' ').replace(/(&nbsp;)/g,'');  
+      return text.substring(0, 100)+'...'
     }
   }
 };

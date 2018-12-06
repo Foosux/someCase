@@ -20,7 +20,7 @@ export default {
         //     subtext: '单位:篇'
         // },
        legend: {
-            data:["新昆明", "彩龙社区", "我爱昆明", "昆明在线"]
+            // data:["新昆明", "彩龙社区", "我爱昆明", "昆明在线"]
         },
         // 提示框组件
         tooltip: {
@@ -33,14 +33,13 @@ export default {
             }
           }
         },
-      
         textStyle: {
           color: "rgba(255, 255, 255)",
           fontSize:10
         },
         xAxis: {
           type: "category",
-          data: ["媒体1", "媒体2", "媒体3","媒体4","媒体5"],
+          data: ["新昆明", "彩龙社区", "我爱昆明","昆明在线","金碧社区"],
           color:"#fff",
           
         },
