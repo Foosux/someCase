@@ -542,15 +542,65 @@ export default {
     getHitWord() {
       this.nodeVal = { val: 1 };
       const _this = this;
-      axios
-        .get("http://123.56.205.155:8082/km/keywords")
-        .then(function(response) {
-          _this.hitWord = response.data.data;
+      _this.hitWord = [{
+        "area":"嵩明县",
+        "hotspot":18250,
+        "trend":1,
+        "id":1,
+        "keyword":"雾霾",
+        "type":1
+      },{
+        "area":"禄劝县",
+        "hotspot":16468,
+        "trend":1,
+        "id":2,
+        "keyword":"绿色食品",
+        "type":4
+      },{
+        "area":"石林县",
+        "hotspot":12678,
+        "trend":0,
+        "id":3,
+        "keyword":"非法集资",
+        "type":6
+      },{
+        "area":"寻甸县",
+        "hotspot":9876,
+        "trend":0,
+        "id":4,
+        "keyword":"污水",
+        "type":3
+      },{
+        "area":"宜良县",
+        "hotspot":6789,
+        "trend":1,
+        "id":5,
+        "keyword":"城中村",
+        "type":6
+      },{
+        "area":"晋宁县",
+        "hotspot":4673,
+        "trend":1,
+        "id":6,
+        "keyword":"火灾",
+        "type":2
+      },{
+        "area":"昆明市",
+        "hotspot":3467,
+        "trend":0,
+        "id":7,
+        "keyword":"宰客",
+        "type":5
+      }]
+    //   axios
+    //     .get("http://123.56.205.155:8082/km/keywords")
+    //     .then(function(response) {
+    //       _this.hitWord = response.data.data;
           // console.log(_this.hitWord);
-        })
-        .catch(function(error) {
-          console.log(error);
-        });
+    //     })
+    //     .catch(function(error) {
+    //       console.log(error);
+    //     });
     }
   }
 };

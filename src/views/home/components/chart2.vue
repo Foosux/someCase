@@ -43,7 +43,7 @@ export default {
             data: [
                 {
                     name: "食物中毒",
-                    value: 1000,
+                    value: 149,
                     textStyle: this.createRandomItemStyle(0)
                 },
                 {
@@ -53,22 +53,22 @@ export default {
                 },
                 {
                     name: "雾霾",
-                    value: 438,
+                    value: 338,
                     textStyle: this.createRandomItemStyle(2)
                 },
                 {
                     name: "滥伐林木",
-                    value: 405,
+                    value: 205,
                     textStyle: this.createRandomItemStyle(3)
                 },
                 {
                     name: "违建",
-                    value: 246,
+                    value: 226,
                     textStyle: this.createRandomItemStyle(4)
                 },
                 {
                     name: "宰客",
-                    value: 244,
+                    value: 144,
                     textStyle: this.createRandomItemStyle(5)
                 },
                 {
@@ -83,12 +83,12 @@ export default {
                 },
                 {
                     name: "火灾",
-                    value: 111,
+                    value: 211,
                     textStyle: this.createRandomItemStyle(2)
                 },
                 {
                     name: "偷猎",
-                    value: 96,
+                    value: 196,
                     textStyle: this.createRandomItemStyle(3)
                 },
                 {
@@ -103,7 +103,7 @@ export default {
                 },
                 {
                     name: "绿色食品",
-                    value: 189,
+                    value: 589,
                     textStyle: this.createRandomItemStyle(0)
                 },
                 {
@@ -113,7 +113,7 @@ export default {
                 },
                 {
                     name: "污水",
-                    value: 111,
+                    value: 211,
                     textStyle: this.createRandomItemStyle(2)
                 },
                 {
@@ -123,12 +123,12 @@ export default {
                 },
                 {
                     name: "城中村",
-                    value: 84,
+                    value: 184,
                     textStyle: this.createRandomItemStyle(4)
                 },
                 {
                     name: "非法集资",
-                    value: 58,
+                    value: 458,
                     textStyle: this.createRandomItemStyle(5)
                 }
             ]

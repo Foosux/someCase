@@ -348,49 +348,49 @@ export default {
       downBg: "url(" + require("../../assets/down.png") + ")",
       searchKeyWords: '',
       // 文章
-      aText: {      
+      aText: {     
         current_page: 1,
         per_page: 10,
         total: 90,
         data: [
-          {
-            type: 1,
-            title: "遥隔四万里的“好知音”，习近平再访阿根廷",
-            info: "时政新闻眼 | 遥隔四万里的“好知音”，习近平再访阿根廷",
-            num: 60,
-            word: ["时政新闻眼", "习近平再访阿根廷"],
-            time: "2018年11月30日",
-            link:
-              "http://news.cctv.com/2018/11/30/ARTI0Fq7owlBlW5NRuXUJyOh181130.shtml"
-          },
-          {
-            type: 1,
-            title: "环境部回应福建碳九事件",
-            info: "环境部回应福建碳九事件：试图掩盖真相极其愚蠢",
-            num: 88,
-            word: ["环境", "福建碳九事件"],
-            time: "2018年11月30日",
-            link:
-              "https://xinwen.eastday.com/a/n181130123459788.html?qid=news.baidu.com"
-          },
-          {
-            type: 2,
-            title: "风华正茂的IDG资本：2018年16个IPO",
-            info: "风华正茂的IDG资本：2018年16个IPO，手上还有至少36个独角兽",
-            num: 18,
-            word: ["IDG资本"],
-            time: "2018年11月30日",
-            link: "http://www.sohu.com/a/278784522_355020"
-          },
-          {
-            type: 1,
-            title: "连接一带一路 德邦快递",
-            info: "连接一带一路 德邦快递拓展国际物流新通道",
-            num: 100,
-            word: ["一带一路"],
-            time: "2018年11月30日",
-            link: "http://economy.enorth.com.cn/system/2018/11/30/036460259.shtml"
-          }
+          // {
+          //   type: 1,
+          //   title: "遥隔四万里的“好知音”，习近平再访阿根廷",
+          //   info: "时政新闻眼 | 遥隔四万里的“好知音”，习近平再访阿根廷",
+          //   num: 60,
+          //   word: ["时政新闻眼", "习近平再访阿根廷"],
+          //   time: "2018年11月30日",
+          //   link:
+          //     "http://news.cctv.com/2018/11/30/ARTI0Fq7owlBlW5NRuXUJyOh181130.shtml"
+          // },
+          // {
+          //   type: 1,
+          //   title: "环境部回应福建碳九事件",
+          //   info: "环境部回应福建碳九事件：试图掩盖真相极其愚蠢",
+          //   num: 88,
+          //   word: ["环境", "福建碳九事件"],
+          //   time: "2018年11月30日",
+          //   link:
+          //     "https://xinwen.eastday.com/a/n181130123459788.html?qid=news.baidu.com"
+          // },
+          // {
+          //   type: 2,
+          //   title: "风华正茂的IDG资本：2018年16个IPO",
+          //   info: "风华正茂的IDG资本：2018年16个IPO，手上还有至少36个独角兽",
+          //   num: 18,
+          //   word: ["IDG资本"],
+          //   time: "2018年11月30日",
+          //   link: "http://www.sohu.com/a/278784522_355020"
+          // },
+          // {
+          //   type: 1,
+          //   title: "连接一带一路 德邦快递",
+          //   info: "连接一带一路 德邦快递拓展国际物流新通道",
+          //   num: 100,
+          //   word: ["一带一路"],
+          //   time: "2018年11月30日",
+          //   link: "http://economy.enorth.com.cn/system/2018/11/30/036460259.shtml"
+          // }
         ]
       },
       titList: [12, 12],
