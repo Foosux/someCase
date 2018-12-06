@@ -482,6 +482,7 @@ export default {
       this.searchInfo({page})
     },
     searchHandle() {
+      this.$router.push(`/search?title=${this.searchKeyWords}`)
       this.searchInfo({title: this.searchKeyWords})
     },
     formatToText(HTML) {
