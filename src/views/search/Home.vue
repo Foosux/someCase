@@ -101,14 +101,14 @@
       <Row :gutter="20">
         <Col span="18">
           <Row>
-            <!-- <AutoComplete
-              v-model="value4"
-              icon="ios-search"
-              placeholder="input here"
-              style="width:300px">
-              <div>123123</div>
-            </AutoComplete> -->
-            <Input search size="large" enter-button="搜索" placeholder="搜索线索"/>
+            <Input 
+              search 
+              size="large" 
+              enter-button="搜索" 
+              placeholder="搜索线索"
+              @on-change="typeIn"
+              @on-search="searchHandle"
+            />
           </Row>
           <Card style="marginTop:10px;">
             <Tabs value="tab1">
@@ -138,7 +138,7 @@
                       <div class='flex'>
                         <span class='tit'>媒体平台：</span>
                         <span class='split'>
-                          <Button type="primary" ghost>全部（2352）</Button>
+                          <Button type="primary" ghost>全部（908）</Button>
                           <Button type="text">金碧社区（103）</Button>
                           <Button type="text">彩龙社区（42）</Button>
                           <Button type="text">滇族部落（102）</Button>
@@ -158,21 +158,24 @@
                   <p slot="title">原文链接</p>
                     <div style="margin:-20px 0 20px;">
                       <ul class="text-con">
-                        <li v-for="(item,index) in aText" :key="index">
+                        <li v-for="(item,index) in aText.data" :key="index">
                           <Button
                             ghost
-                            :type="(item.news_id%3)==1?'success':(item.news_id%3)==2?'error':'info'"
+                            :type="item.face_flag==1?'success':item.face_flag==2?'error':'info'"
                             style="float:left;margin: 5px 10px 0px -50px;"
                             size="small"
-                          >{{(item.news_id%3)==1?'正面':(item.news_id%3)==2?'负面':'中性'}}</Button>
+                          >{{item.face_flag==1?'正面':item.face_flag==2?'负面':'中性'}}</Button>
                           <div>
                             <p style="fontSize:20px;lineHeight:34px;">
-                              <a target="_blank" style="color:#313131;" :href="item.url">{{item.name}}</a>
+                              <a target="_blank" style="color:#313131;" :href="item.url">{{item.title}}</a>
                             </p>
+                            <!--
                             <p style="color:#7d7d7d;fontSize:16px;">{{item.name}} 讨论热点{{item.discuss_count}} 浏览量 {{item.view_count}}</p>
+                             -->
                             <p style="lineHeight:30px;">
-                              <a>相似文章{{item.discuss_count}}</a>
+                              <a>相似文章 {{item.discuss_count}} </a>
                             </p>
+                
                             <div>
                               <span style="float:left;color:#7d7d7d;fontSize:14px;">主题词：</span>
                               <!-- <span
@@ -181,7 +184,8 @@
                                 :key="index_word"
                               >{{item_word}}
                               </span> -->
-                              <span>昆明 污水排放 环境污染</span>
+                              <span>{{item.tag}}</span>
+                              <span style="marginLeft:20px;">{{item.from}}</span>
                               <b style="float:right;">{{item.time}}</b>
                             </div>
                           </div>
@@ -189,7 +193,13 @@
                       </ul>
                       <Row type="flex" justify="center" :style="{marginTop:'10px'}">
                         <Col>
-                          <Page :pageSize="1" :total="112" :current="1" show-total></Page>
+                          <Page 
+                            :pageSize="aText.per_page" 
+                            :total="aText.total" 
+                            :current="aText.current_page" 
+                            @on-change="changePage"
+                            show-total
+                          ></Page>
                         </Col>
                       </Row>
                     </div>
@@ -210,7 +220,7 @@
                       <div class='flex'>
                         <span class='tit'>媒体平台：</span>
                         <span class='split'>
-                          <Button type="primary" ghost>全部（2352）</Button>
+                          <Button type="primary" ghost>全部（908）</Button>
                           <Button type="text">金碧社区（103）</Button>
                           <Button type="text">彩龙社区（42）</Button>
                           <Button type="text">滇族部落（102）</Button>
@@ -275,7 +285,7 @@
                   <span
                     class='num'
                     :style="{color:'#FFF',background:index==0?'#ff0404':index==1?'#fe9104':index==2?'#fbb803':'#4ec7fa'}"
-                  >{{index}}</span>
+                  >{{index+1}}</span>
                   <span>{{item.title}}</span>
                   <span>{{item.count}}</span>
                   <span
@@ -335,47 +345,53 @@ export default {
       imgFot: "url(" + require("../../assets/footer.png") + ")",
       upBg: "url(" + require("../../assets/up.png") + ")",
       downBg: "url(" + require("../../assets/down.png") + ")",
+      searchKeyWords: '',
       // 文章
-      aText: [
-        {
-          type: 1,
-          title: "遥隔四万里的“好知音”，习近平再访阿根廷",
-          info: "时政新闻眼 | 遥隔四万里的“好知音”，习近平再访阿根廷",
-          num: 60,
-          word: ["时政新闻眼", "习近平再访阿根廷"],
-          time: "2018年11月30日",
-          link:
-            "http://news.cctv.com/2018/11/30/ARTI0Fq7owlBlW5NRuXUJyOh181130.shtml"
-        },
-        {
-          type: 1,
-          title: "环境部回应福建碳九事件",
-          info: "环境部回应福建碳九事件：试图掩盖真相极其愚蠢",
-          num: 88,
-          word: ["环境", "福建碳九事件"],
-          time: "2018年11月30日",
-          link:
-            "https://xinwen.eastday.com/a/n181130123459788.html?qid=news.baidu.com"
-        },
-        {
-          type: 2,
-          title: "风华正茂的IDG资本：2018年16个IPO",
-          info: "风华正茂的IDG资本：2018年16个IPO，手上还有至少36个独角兽",
-          num: 18,
-          word: ["IDG资本"],
-          time: "2018年11月30日",
-          link: "http://www.sohu.com/a/278784522_355020"
-        },
-        {
-          type: 1,
-          title: "连接一带一路 德邦快递",
-          info: "连接一带一路 德邦快递拓展国际物流新通道",
-          num: 100,
-          word: ["一带一路"],
-          time: "2018年11月30日",
-          link: "http://economy.enorth.com.cn/system/2018/11/30/036460259.shtml"
-        }
-      ],
+      aText: {      
+        current_page: 1,
+        per_page: 10,
+        total: 90,
+        data: [
+          {
+            type: 1,
+            title: "遥隔四万里的“好知音”，习近平再访阿根廷",
+            info: "时政新闻眼 | 遥隔四万里的“好知音”，习近平再访阿根廷",
+            num: 60,
+            word: ["时政新闻眼", "习近平再访阿根廷"],
+            time: "2018年11月30日",
+            link:
+              "http://news.cctv.com/2018/11/30/ARTI0Fq7owlBlW5NRuXUJyOh181130.shtml"
+          },
+          {
+            type: 1,
+            title: "环境部回应福建碳九事件",
+            info: "环境部回应福建碳九事件：试图掩盖真相极其愚蠢",
+            num: 88,
+            word: ["环境", "福建碳九事件"],
+            time: "2018年11月30日",
+            link:
+              "https://xinwen.eastday.com/a/n181130123459788.html?qid=news.baidu.com"
+          },
+          {
+            type: 2,
+            title: "风华正茂的IDG资本：2018年16个IPO",
+            info: "风华正茂的IDG资本：2018年16个IPO，手上还有至少36个独角兽",
+            num: 18,
+            word: ["IDG资本"],
+            time: "2018年11月30日",
+            link: "http://www.sohu.com/a/278784522_355020"
+          },
+          {
+            type: 1,
+            title: "连接一带一路 德邦快递",
+            info: "连接一带一路 德邦快递拓展国际物流新通道",
+            num: 100,
+            word: ["一带一路"],
+            time: "2018年11月30日",
+            link: "http://economy.enorth.com.cn/system/2018/11/30/036460259.shtml"
+          }
+        ]
+      },
       titList: [12, 12],
       // 热点list
       aHot: [{
@@ -431,17 +447,40 @@ export default {
     };
   },
   mounted() {
-    const _this = this;
-    axios
-      .get("http://123.56.205.155:8082/km/indexsearch?page=1")
+    this.searchInfo()
+  },
+  methods: {
+    searchInfo(params) {
+      const _this = this;
+      axios("http://kmbeta.blitech.cn/index/Index/list_data",{
+        params: {
+          page: _this.aText.current_page,
+          title: _this.searchKeyWords,
+          ...params
+        }
+      })
+        // .get("http://123.56.205.155:8082/km/indexsearch?page=1")
       .then(function(response) {
-        //console.log(response.data);
-        _this.aText = response.data.data;
+        response.data.data.forEach((item, i) => {
+          item.time = ["2018年11月3日","2017年6月23日","2018年1月5日","2018年8月14日","2016年7月20日","2018年10月6日","2018年3月5日","2018年5月21日","2018年9月17日","2015年8月3日"][i]
+          item.discuss_count = Math.floor(Math.random()*1000)
+        })
+        _this.aText = response.data;
         //console.log(_this.aText);
       })
       .catch(function(error) {
         console.log(error);
       });
+    },
+    changePage(page) {
+      this.searchInfo({page})
+    },
+    typeIn(e) {
+      this.searchKeyWords = e.target.value
+    },
+    searchHandle() {
+      this.searchInfo({title: this.searchKeyWords})
+    }
   }
 };
 </script>
