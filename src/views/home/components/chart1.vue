@@ -53,6 +53,7 @@ export default {
         },
         xAxis: {
           type: "category",
+          nameRotate: "90",
           data: ["新昆明", "彩龙社区", "我爱昆明","昆明在线","金碧社区"],
           color:"#fff",
         },
