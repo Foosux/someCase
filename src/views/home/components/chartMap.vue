@@ -80,18 +80,163 @@ export default {
         // console.log(111, data, _this.mapNode.nodeVal.val)
         var res = [];
         let opts = {
-          0: ['食品安全','绿色食品','假冒','吸毒','违禁药物',
-            '民间偏方','雾霾','污水','白色垃圾','环保',
-            '火灾','偷猎','违建','城中村','拆迁','高价','宰客','维权'],
-          1: ['食品安全','绿色食品','假冒','农药残留'],
-          2: ['吸毒','违禁药物','民间偏方','药品安全'],
-          3: ['雾霾','污水','白色垃圾','垃圾'],
-          4: ['雾霾','火灾','偷猎','环保'],
-          5: ['违建','城中村','拆迁','占用土地'],
-          6: ['高价','宰客','维权','欺诈']
-          
+          0: [{
+            name: '违法出让国有土地',
+            num: 224
+          },{
+            name: '损害生态环境',
+            num: 178
+          },{
+            name: '损害消费者权益',
+            num: 136
+          },{
+            name: '危害药品安全',
+            num: 135
+          },{
+            name: '损害自然环境',
+            num: 123
+          },{
+            name: '火灾',
+            num: 120
+          },{
+            name: '危害食品安全',
+            num: 112
+          }],
+          1:[{
+            name: '危害食品安全',
+            num: 135
+          },{
+            name: '假冒',
+            num: 44
+          },{
+            name: '绿色食品',
+            num: 41
+          },{
+            name: '食品安全',
+            num: 20
+          },{
+            name: '卫生',
+            num: 10
+          },{
+            name: '食物中毒',
+            num: 7
+          },{
+            name: '外卖偷吃',
+            num: 2
+          }],
+          2: [{
+            name: '药品安全',
+            num: 135
+          },{
+            name: '假冒',
+            num: 44
+          },{
+            name: '高价',
+            num: 20
+          },{
+            name: '土方子',
+            num: 5
+          },{
+            name: '微量元素超标',
+            num: 4
+          },{
+            name: '公共卫生事件',
+            num: 1
+          },{
+            name: '违禁药物',
+            num: 1
+          }],
+          3: [{
+            name: '火灾',
+            num: 120
+          },{
+            name: '污水',
+            num: 64
+          },{
+            name: '废水',
+            num: 23
+          },{
+            name: '自然资源',
+            num: 20
+          },{
+            name: '水污染',
+            num: 12
+          },{
+            name: '土壤污染',
+            num: 2
+          },{
+            name: '粉尘',
+            num: 1
+          }],
+          4: [{
+            name: '火灾',
+            num: 120
+          },{
+            name: '污水',
+            num: 64
+          },{
+            name: '雾霾',
+            num: 39
+          },{
+            name: '损害生态',
+            num: 35
+          },{
+            name: '废水',
+            num: 23
+          },{
+            name: '农药污染',
+            num:11
+          },{
+            name: '矿山',
+            num: 7
+          }],
+          5: [{
+            name: '侵占',
+            num: 59
+          },{
+            name: '拆迁',
+            num: 44
+          },{
+            name: '城中村',
+            num: 36
+          },{
+            name: '违建',
+            num: 35
+          },{
+            name: '国有土地使用权',
+            num: 20
+          },{
+            name: '占用',
+            num:19
+          },{
+            name: '违法出让国有土地使用权',
+            num: 6
+          }],
+          6: [{
+            name: '假冒',
+            num: 44
+          },{
+            name: '欺诈',
+            num: 43
+          },{
+            name: '高价',
+            num: 20
+          },{
+            name: '维权',
+            num: 20
+          },{
+            name: '诈骗',
+            num: 20
+          },{
+            name: '宰客',
+            num:9
+          },{
+            name: '骗局',
+            num: 4
+          }]
+
         }
-          
+
         for (var i = 0; i < data.length; i++) {
           var geoCoord = geoCoordMap[data[i].name];
           if (geoCoord) {
@@ -107,7 +252,6 @@ export default {
             });
           }
         }
-        console.log(res)
 
         return res;
       };
@@ -249,18 +393,14 @@ export default {
                 backgroundColor: "rgba(0,0,0, .6)",
                 padding: 4,
                 formatter: (obj)=> {
-                  console.log(6666666, obj)
-                  return `${obj.name}-${obj.data.tag[obj.dataIndex||2]}（${obj.value[2]}）`
+                  // console.log(6666666, obj)
+                  let arr = obj.data.tag.sort(function() {
+                      return .5 - Math.random();
+                  })
+                  return `${obj.name}-${arr[obj.dataIndex].name}（${arr[obj.dataIndex].num}）`
                 },
               }
             },
-            // itemStyle: {
-            //   normal: {
-            //     color: ["","#fd7201","#948617","#03f85f","#03ece7","#b802fc","#ea06b7"][this.mapNode.nodeVal.val],
-            //     shadowBlur: 10,
-            //     shadowColor: "#333"
-            //   }
-            // },
             zlevel: 1
           }
         ]
@@ -279,7 +419,7 @@ export default {
   watch: {
     mapNode(cur, old) {
       switch (cur.nodeVal.val) {
-        case 0: 
+        case 0:
           this.brightData = [
             { name: "寻甸回族彝族自治县", value: 13289 },
             { name: "晋宁线", value: 8773 },

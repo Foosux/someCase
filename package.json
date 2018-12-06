@@ -31,11 +31,9 @@
     "env": {
       "node": true
     },
-    "extends": [
-    ],
+    "extends": [],
     "rules": {},
     "parserOptions": {
-      "parser": "babel-eslint"
     }
   },
   "postcss": {

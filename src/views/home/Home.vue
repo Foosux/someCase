@@ -217,7 +217,7 @@
                           background:
                           item.trend==1
                             ? upBg
-                            : item.trend==0
+                            : item.trend==2
                               ? downBg
                               : 'none',
                           width:'10px',height:'16px',marginLeft: '5px'
@@ -254,11 +254,11 @@
 
           <Card :style="{background:image,marginTop:'10px'}">
             <p slot="title" style="color:#fff;">媒体分布</p>
-            
+
             <div style="margin:0 auto;">
               <chart1></chart1>
             </div>
-            
+
           </Card>
         </Col>
       </Row>
@@ -352,7 +352,7 @@
           </div>
         </Col>
       </Row>
-      
+
     </div>
   </div>
 </template>
@@ -545,52 +545,52 @@ export default {
       const _this = this;
       _this.hitWord = [{
         "area":"嵩明县",
-        "hotspot":18250,
+        "hotspot":135,
         "trend":1,
         "id":1,
-        "keyword":"雾霾",
+        "keyword":"药品安全",
         "type":1
       },{
         "area":"禄劝县",
-        "hotspot":16468,
-        "trend":1,
+        "hotspot":120,
+        "trend":0,
         "id":2,
-        "keyword":"绿色食品",
+        "keyword":"火灾",
         "type":4
       },{
         "area":"石林县",
-        "hotspot":12678,
-        "trend":0,
+        "hotspot":64,
+        "trend":2,
         "id":3,
-        "keyword":"非法集资",
+        "keyword":"污水",
         "type":6
       },{
         "area":"寻甸县",
-        "hotspot":9876,
+        "hotspot":59,
         "trend":0,
         "id":4,
-        "keyword":"污水",
+        "keyword":"侵占",
         "type":3
       },{
         "area":"宜良县",
-        "hotspot":6789,
+        "hotspot":44,
         "trend":1,
         "id":5,
-        "keyword":"城中村",
+        "keyword":"拆迁",
         "type":6
       },{
         "area":"晋宁县",
-        "hotspot":4673,
+        "hotspot":44,
         "trend":1,
         "id":6,
-        "keyword":"火灾",
+        "keyword":"假冒",
         "type":2
       },{
         "area":"昆明市",
-        "hotspot":3467,
+        "hotspot":43,
         "trend":0,
         "id":7,
-        "keyword":"宰客",
+        "keyword":"欺诈",
         "type":5
       }]
     //   axios

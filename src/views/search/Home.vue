@@ -101,10 +101,10 @@
       <Row :gutter="20">
         <Col span="18">
           <Row>
-            <Input 
-              search 
-              size="large" 
-              enter-button="搜索" 
+            <Input
+              search
+              size="large"
+              enter-button="搜索"
               placeholder="搜索线索"
               v-model="searchKeyWords"
               @on-search="searchHandle"
@@ -176,7 +176,7 @@
                             <p style="lineHeight:30px;">
                               <a href='javascript: void(0)'>相似文章 {{item.discuss_count}} </a>
                             </p>
-                
+
                             <div>
                               <span style="float:left;color:#7d7d7d;fontSize:14px;">主题词：</span>
                               <!-- <span
@@ -194,10 +194,10 @@
                       </ul>
                       <Row type="flex" justify="center" :style="{marginTop:'10px'}">
                         <Col>
-                          <Page 
-                            :pageSize="aText.per_page" 
-                            :total="aText.total" 
-                            :current="aText.current_page" 
+                          <Page
+                            :pageSize="aText.per_page"
+                            :total="aText.total"
+                            :current="aText.current_page"
                             @on-change="changePage"
                             show-total
                           ></Page>
@@ -348,7 +348,7 @@ export default {
       downBg: "url(" + require("../../assets/down.png") + ")",
       searchKeyWords: '',
       // 文章
-      aText: {     
+      aText: {
         current_page: 1,
         per_page: 10,
         total: 90,
@@ -396,52 +396,52 @@ export default {
       titList: [12, 12],
       // 热点list
       aHot: [{
-        title: "嵩明县疑似出现非洲猪瘟",
-        count: 18250,
+        title: "药品安全",
+        count: 135,
         upDown: 1
       }, {
-        title: "禄劝县龙马村村名滥伐林木",
-        count: 16468,
+        title: "火灾",
+        count: 120,
         upDown: 0
       },
       {
-        title: "石林县黑中介套路租房",
-        count: 12678,
+        title: "污水",
+        count: 64,
         upDown: 2
       },
       {
-        title: "寻甸县八宝镇垃圾焚烧污染",
-        count:  9876,
+        title: "侵占",
+        count:  59,
         upDown: 0
       },
       {
-        title: "宜良县御景新城烂尾",
-        count: 6789,
+        title: "拆迁",
+        count: 44,
+        upDown: 1
+      },
+      {
+        title: "假冒",
+        count: 44,
+        upDown: 1
+      },
+      {
+        title: "欺诈",
+        count: 43,
         upDown: 0
       },
       {
-        title: "晋宁县查获违禁药品",
-        count: 4673,
+        title: "绿色食品",
+        count: 41,
         upDown: 0
       },
       {
-        title: "禄劝县龙马村村名滥伐林木",
-        count: 3676,
+        title: "雾霾",
+        count: 39,
         upDown: 0
       },
       {
-        title: "寻甸县八宝镇垃圾焚烧污染",
-        count: 2456,
-        upDown: 0
-      },
-      {
-        title: "晋宁县查获违禁药品",
-        count: 1897,
-        upDown: 0
-      },
-      {
-        title: "石林县黑中介套路租房",
-        count: 1657,
+        title: "城中村",
+        count: 36,
         upDown: 0
       }
       ]
@@ -487,7 +487,7 @@ export default {
     },
     formatToText(HTML) {
       let input = HTML;
-      let text = input.replace(/<(style|script|iframe)[^>]*?>[\s\S]+?<\/\1\s*>/gi,'').replace(/<[^>]+?>/g,'').replace(/\s+/g,' ').replace(/ /g,' ').replace(/>/g,' ').replace(/(&nbsp;)/g,'');  
+      let text = input.replace(/<(style|script|iframe)[^>]*?>[\s\S]+?<\/\1\s*>/gi,'').replace(/<[^>]+?>/g,'').replace(/\s+/g,' ').replace(/ /g,' ').replace(/>/g,' ').replace(/(&nbsp;)/g,'');
       return text.substring(0, 100)+'...'
     }
   }

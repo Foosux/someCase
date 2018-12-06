@@ -13,8 +13,8 @@ export default {
   methods: {
     createRandomItemStyle(type) {
       return {
-        normal: {    
-          color: ['rgb(253, 114, 1)', 'rgb(148, 134, 23)', 'rgb(3, 248, 95)', 'rgb(3, 236, 231)', 'rgb(184, 2, 252)', 'rgb(234, 6, 183)'][type] 
+        normal: {
+          color: ['rgb(253, 114, 1)', 'rgb(148, 134, 23)', 'rgb(3, 248, 95)', 'rgb(3, 236, 231)', 'rgb(184, 2, 252)', 'rgb(234, 6, 183)'][type]
         }
       };
     },
@@ -28,7 +28,7 @@ export default {
         tooltip: {
           show: true
         },
-       
+
         series: [{
             name: '',
             type: 'wordCloud',
@@ -42,58 +42,58 @@ export default {
             },
             data: [
                 {
-                    name: "食物中毒",
-                    value: 149,
+                    name: "绿色食品",
+                    value: 41,
                     textStyle: this.createRandomItemStyle(0)
                 },
                 {
-                    name: "毒品",
-                    value: 218,
-                    textStyle: this.createRandomItemStyle(1)
-                },
-                {
-                    name: "雾霾",
-                    value: 338,
-                    textStyle: this.createRandomItemStyle(2)
-                },
-                {
-                    name: "滥伐林木",
-                    value: 205,
-                    textStyle: this.createRandomItemStyle(3)
-                },
-                {
-                    name: "违建",
-                    value: 226,
-                    textStyle: this.createRandomItemStyle(4)
-                },
-                {
-                    name: "宰客",
-                    value: 144,
-                    textStyle: this.createRandomItemStyle(5)
-                },
-                {
-                    name: "农药残留",
-                    value: 189,
-                    textStyle: this.createRandomItemStyle(0)
-                },
-                {
-                    name: "民间偏方",
-                    value: 148,
+                    name: "药品安全",
+                    value: 135,
                     textStyle: this.createRandomItemStyle(1)
                 },
                 {
                     name: "火灾",
-                    value: 211,
+                    value: 120,
                     textStyle: this.createRandomItemStyle(2)
                 },
                 {
-                    name: "偷猎",
-                    value: 196,
+                    name: "雾霾",
+                    value: 39,
                     textStyle: this.createRandomItemStyle(3)
                 },
                 {
                     name: "侵占",
-                    value: 84,
+                    value: 59,
+                    textStyle: this.createRandomItemStyle(4)
+                },
+                {
+                    name: "假冒",
+                    value: 44,
+                    textStyle: this.createRandomItemStyle(5)
+                },
+                {
+                    name: "食品安全",
+                    value: 20,
+                    textStyle: this.createRandomItemStyle(0)
+                },
+                {
+                    name: "土方子",
+                    value: 5,
+                    textStyle: this.createRandomItemStyle(1)
+                },
+                {
+                    name: "自然资源",
+                    value: 20,
+                    textStyle: this.createRandomItemStyle(2)
+                },
+                {
+                    name: "农药污染",
+                    value: 11,
+                    textStyle: this.createRandomItemStyle(3)
+                },
+                {
+                    name: "城中村",
+                    value: 36,
                     textStyle: this.createRandomItemStyle(4)
                 },
                 {
@@ -102,33 +102,33 @@ export default {
                     textStyle: this.createRandomItemStyle(5)
                 },
                 {
-                    name: "绿色食品",
-                    value: 589,
+                    name: "食品安全",
+                    value: 20,
                     textStyle: this.createRandomItemStyle(0)
                 },
                 {
-                    name: "假药",
-                    value: 148,
+                    name: "高价",
+                    value: 20,
                     textStyle: this.createRandomItemStyle(1)
                 },
                 {
-                    name: "污水",
-                    value: 211,
+                    name: "自然资源",
+                    value: 20,
                     textStyle: this.createRandomItemStyle(2)
                 },
                 {
-                    name: "森林大火",
-                    value: 96,
+                    name: "污水",
+                    value: 64,
                     textStyle: this.createRandomItemStyle(3)
                 },
                 {
-                    name: "城中村",
-                    value: 184,
+                    name: "拆迁",
+                    value: 44,
                     textStyle: this.createRandomItemStyle(4)
                 },
                 {
-                    name: "非法集资",
-                    value: 458,
+                    name: "欺诈",
+                    value: 43,
                     textStyle: this.createRandomItemStyle(5)
                 }
             ]
