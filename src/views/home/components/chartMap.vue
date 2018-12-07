@@ -237,6 +237,28 @@ export default {
           },{
             name: '骗局',
             num: 4
+          }],
+          7: [{
+            name: '药品安全',
+            num: 135
+          },{
+            name: '火灾',
+            num: 120
+          },{
+            name: '污水',
+            num: 64
+          },{
+            name: '侵占',
+            num: 59
+          },{
+            name: '拆迁',
+            num: 44
+          },{
+            name: '假冒',
+            num:44
+          },{
+            name: '欺诈',
+            num: 43
           }]
 
         }
@@ -249,7 +271,7 @@ export default {
               value: geoCoord.concat(data[i].value),
               itemStyle: {
                 normal: {
-                  color: ["#FFF","#fd7201","#948617","#03f85f","#03ece7","#b802fc","#ea06b7"][_this.mapNode.nodeVal.val],
+                  color: ["#FFF","#fd7201","#948617","#03f85f","#03ece7","#b802fc","#ea06b7","#FFF331"][_this.mapNode.nodeVal.val],
                 }
               },
               tag: opts[_this.mapNode.nodeVal.val]
@@ -569,6 +591,27 @@ export default {
             '东川区': [300, 229],
             '东川区1': [350, 356],
             '东川区2': [275, 149],
+          };
+          this.initChart();
+          break;
+        case 7:
+          this.brightData = [
+            { name: "寻甸回族彝族自治县", value: 13289 },
+            { name: "晋宁线", value: 8773 },
+            { name: "西山区", value: 7876 },
+            { name: "呈贡区", value: 18772 },
+            { name: "东川区", value: 6553 },
+            { name: "东川区1", value: 6553 },
+            { name: "东川区2", value: 6553 },
+          ];
+          this.bright_pos = {
+            '寻甸回族彝族自治县': [350, 280],
+            '晋宁线': [290, 480],
+            '西山区': [270, 370],
+            '呈贡区': [340, 430],
+            '东川区': [360, 120],
+            '东川区1': [370, 220],
+            '东川区2': [300, 170],
           };
           this.initChart();
           break;

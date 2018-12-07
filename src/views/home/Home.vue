@@ -199,7 +199,7 @@
             </p>
             <div>
               <ul class="text-con3">
-                <li v-for="(item,index) in hitWord" :key="index">
+                <li v-for="(item,index) in hitWord[nodeVal.val]" :key="index">
                   <router-link :to="{
                     path: '/search',
                     query: {
@@ -247,7 +247,7 @@
             <div style="height:180px;">
               <!-- <p>主题词云</p> -->
               <div style="margin:0 auto;">
-                <chart2></chart2>
+                <chart2 :mapNode="{nodeVal}"></chart2>
               </div>
             </div>
           </Card>
@@ -387,14 +387,254 @@ export default {
       image: "rgba(0,0,0,0.1)",
       imgFot: "url(" + require("../../assets/footer.png") + ")",
       type: 1,
-      nodeVal: { val: 1 },
+      nodeVal: { val: 7 },
       // 文章
-      hitWord: [
-        {
-          title: "受得了副科单价了解到酸辣粉",
-          num: 88
-        }
-      ],
+      hitWord: [[{
+        keyword: '违法出让国有土地',
+        trend: 0,
+        hotspot: 224,
+      },{
+        keyword: '损害生态环境',
+        trend: 1,
+        hotspot: 178,
+      },{
+        keyword: '损害消费者权益',
+        trend: 0,
+        hotspot: 136,
+      },{
+        keyword: '危害药品安全',
+        trend: 0,
+        hotspot: 135,
+      },{
+        keyword: '损害自然环境',
+        trend: 0,
+        hotspot: 123,
+      },{
+        keyword: '火灾',
+        trend: 2,
+        hotspot: 120,
+      },{
+        keyword: '危害食品安全',
+        trend: 0,
+        hotspot: 112,
+      }],[{
+        keyword: '危害食品安全',
+        hotspot: 135,
+        trend: 1,
+      },{
+        keyword: '假冒',
+        hotspot: 44,
+        trend: 1,
+      },{
+        keyword: '绿色食品',
+        hotspot: 41,
+        trend: 0,
+      },{
+        keyword: '食品安全',
+        hotspot: 20,
+        trend: 0,
+      },{
+        keyword: '卫生',
+        hotspot: 10,
+        trend: 0,
+      },{
+        keyword: '食物中毒',
+        hotspot: 7,
+        trend: 0,
+      },{
+        keyword: '外卖偷吃',
+        hotspot: 2,
+        trend: 2,
+      }],[{
+        keyword: '药品安全',
+        hotspot: 135,
+        trend: 0,
+      },{
+        keyword: '假冒',
+        hotspot: 44,
+        trend: 1,
+      },{
+        keyword: '高价',
+        hotspot: 20,
+        trend: 0,
+      },{
+        keyword: '土方子',
+        hotspot: 5,
+        trend: 2,
+      },{
+        keyword: '微量元素超标',
+        hotspot: 4,
+        trend: 0,
+      },{
+        keyword: '公共卫生事件',
+        hotspot: 1,
+        trend: 0,
+      },{
+        keyword: '违禁药物',
+        hotspot: 1,
+        trend: 0,
+      }],[{
+        keyword: '火灾',
+        hotspot: 120,
+        trend: 0,
+      },{
+        keyword: '污水',
+        hotspot: 64,
+        trend: 1,
+      },{
+        keyword: '废水',
+        hotspot: 23,
+        trend: 0,
+      },{
+        keyword: '自然资源',
+        hotspot: 20,
+        trend: 0,
+      },{
+        keyword: '水污染',
+        hotspot: 12,
+        trend: 2,
+      },{
+        keyword: '土壤污染',
+        hotspot: 2,
+        trend: 0,
+      },{
+        keyword: '粉尘',
+        hotspot: 1,
+        trend: 0,
+      }],[{
+        keyword: '火灾',
+        hotspot: 120,
+        trend: 1,
+      },{
+        keyword: '污水',
+        hotspot: 64,
+        trend: 0,
+      },{
+        keyword: '雾霾',
+        hotspot: 39,
+        trend: 0,
+      },{
+        keyword: '损害生态',
+        hotspot: 35,
+        trend: 2,
+      },{
+        keyword: '废水',
+        hotspot: 23,
+        trend: 0,
+      },{
+        keyword: '农药污染',
+        hotspot:11,
+        trend: 0,
+      },{
+        keyword: '矿山',
+        hotspot: 7,
+        trend: 0,
+      }],[{
+        keyword: '侵占',
+        hotspot: 59,
+        trend: 1,
+      },{
+        keyword: '拆迁',
+        hotspot: 44,
+        trend: 0,
+      },{
+        keyword: '城中村',
+        hotspot: 36,
+        trend: 1,
+      },{
+        keyword: '违建',
+        hotspot: 35,
+        trend: 0,
+      },{
+        keyword: '国有土地使用权',
+        hotspot: 20,
+        trend: 0,
+      },{
+        keyword: '占用',
+        hotspot:19,
+        trend: 0,
+      },{
+        keyword: '违法出让国有土地使用权',
+        hotspot: 6,
+        trend: 2,
+      }],[{
+        keyword: '假冒',
+        hotspot: 44,
+        trend: 0,
+      },{
+        keyword: '欺诈',
+        hotspot: 43,
+        trend: 1,
+      },{
+        keyword: '高价',
+        hotspot: 20,
+        trend: 0,
+      },{
+        keyword: '维权',
+        hotspot: 20,
+        trend: 0,
+      },{
+        keyword: '诈骗',
+        hotspot: 20,
+        trend: 2,
+      },{
+        keyword: '宰客',
+        hotspot:9,
+        trend: 0,
+      },{
+        keyword: '骗局',
+        hotspot: 4,
+        trend: 0,
+      }],[{
+        "area":"嵩明县",
+        "hotspot":135,
+        "trend":1,
+        "id":1,
+        "keyword":"药品安全",
+        "type":1
+      },{
+        "area":"禄劝县",
+        "hotspot":120,
+        "trend":0,
+        "id":2,
+        "keyword":"火灾",
+        "type":4
+      },{
+        "area":"石林县",
+        "hotspot":64,
+        "trend":2,
+        "id":3,
+        "keyword":"污水",
+        "type":6
+      },{
+        "area":"寻甸县",
+        "hotspot":59,
+        "trend":0,
+        "id":4,
+        "keyword":"侵占",
+        "type":3
+      },{
+        "area":"宜良县",
+        "hotspot":44,
+        "trend":1,
+        "id":5,
+        "keyword":"拆迁",
+        "type":6
+      },{
+        "area":"晋宁县",
+        "hotspot":44,
+        "trend":1,
+        "id":6,
+        "keyword":"假冒",
+        "type":2
+      },{
+        "area":"昆明市",
+        "hotspot":43,
+        "trend":0,
+        "id":7,
+        "keyword":"欺诈",
+        "type":5
+      }]],
       // 文章
       aText2: [
         {
@@ -495,7 +735,7 @@ export default {
     };
   },
   mounted() {
-    this.getHitWord();
+    // this.getHitWord();
     this.getYJXX();
     this.getMGXX();
     this.getXZCFS();
@@ -543,56 +783,7 @@ export default {
     getHitWord() {
       this.nodeVal = { val: 1 };
       const _this = this;
-      _this.hitWord = [{
-        "area":"嵩明县",
-        "hotspot":135,
-        "trend":1,
-        "id":1,
-        "keyword":"药品安全",
-        "type":1
-      },{
-        "area":"禄劝县",
-        "hotspot":120,
-        "trend":0,
-        "id":2,
-        "keyword":"火灾",
-        "type":4
-      },{
-        "area":"石林县",
-        "hotspot":64,
-        "trend":2,
-        "id":3,
-        "keyword":"污水",
-        "type":6
-      },{
-        "area":"寻甸县",
-        "hotspot":59,
-        "trend":0,
-        "id":4,
-        "keyword":"侵占",
-        "type":3
-      },{
-        "area":"宜良县",
-        "hotspot":44,
-        "trend":1,
-        "id":5,
-        "keyword":"拆迁",
-        "type":6
-      },{
-        "area":"晋宁县",
-        "hotspot":44,
-        "trend":1,
-        "id":6,
-        "keyword":"假冒",
-        "type":2
-      },{
-        "area":"昆明市",
-        "hotspot":43,
-        "trend":0,
-        "id":7,
-        "keyword":"欺诈",
-        "type":5
-      }]
+      // _this.hitWord =
     //   axios
     //     .get("http://123.56.205.155:8082/km/keywords")
     //     .then(function(response) {
